@@ -58,7 +58,7 @@ class HomeScreenBase extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Card(
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(2),
