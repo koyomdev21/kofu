@@ -10,6 +10,7 @@ import 'package:kofu/src/features/authentication/common_widgets/scrollview_conta
 import 'package:kofu/src/features/authentication/common_widgets/auth_validators.dart';
 import 'package:kofu/src/features/authentication/common_widgets/sign_up_button.dart';
 import 'package:kofu/src/features/authentication/providers/sign_up_notifier_controller_provider.dart';
+import 'package:kofu/src/features/dashboard/presentation/providers/dashboard_controller_provider.dart';
 import 'package:kofu/src/routing/app_router.dart';
 import 'package:kofu/src/utils/app_preferences.dart';
 import 'package:kofu/src/utils/async_value_ui.dart';
@@ -121,6 +122,7 @@ class _SignInScreenBaseState extends ConsumerState<SignInScreenBase>
         leading: IconButton(
           onPressed: () {
             context.goNamed(AppRoute.home.name);
+            ref.read(dashboardControllerNotifierProvider.notifier).state = 0;
           },
           icon: Image.asset('assets/icons/close.png'),
         ),
