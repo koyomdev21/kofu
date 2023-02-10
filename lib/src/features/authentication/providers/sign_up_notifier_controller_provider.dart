@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:kofu/src/features/authentication/data/remote/remote_auth_repository.dart';
+import 'package:kofu/src/features/dashboard/presentation/providers/dashboard_controller_provider.dart';
 import 'package:kofu/src/routing/app_router.dart';
 import 'package:kofu/src/utils/app_preferences.dart';
 import 'package:kofu/src/utils/secure_storage_provider.dart';
@@ -11,8 +11,6 @@ class SignUpNotifierControllerNotifier extends Notifier<AsyncValue<void>> {
     state = const AsyncData<void>(null);
     return state;
   }
-
-  final _storage = const FlutterSecureStorage();
 
   Future<bool> register({
     required String username,
@@ -49,6 +47,7 @@ class SignUpNotifierControllerNotifier extends Notifier<AsyncValue<void>> {
       state = AsyncError(value.error!, StackTrace.current);
     } else {
       state = const AsyncData<void>(null);
+      ref.read(dashboardControllerNotifierProvider.notifier).state = 3;
       ref
           .read(appPreferencesProvider)
           .setPermission(value.value?.permissions ?? []);
