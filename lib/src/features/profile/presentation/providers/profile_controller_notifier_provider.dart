@@ -4,7 +4,8 @@ import 'package:kofu/src/features/profile/domain/profile_response.dart';
 import 'package:kofu/src/utils/app_preferences.dart';
 import 'package:kofu/src/utils/secure_storage_provider.dart';
 
-class ProfileControllerNotifier extends Notifier<AsyncValue<ProfileResponse>> {
+class ProfileControllerNotifier
+    extends AutoDisposeNotifier<AsyncValue<ProfileResponse>> {
   @override
   build() {
     getProfile();
@@ -14,7 +15,7 @@ class ProfileControllerNotifier extends Notifier<AsyncValue<ProfileResponse>> {
   void getProfile() async {
     final profileRepository = ref.read(profileRepositoryProvider);
     state = const AsyncLoading();
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     final value = await AsyncValue.guard(() => profileRepository.getProfile());
     if (value.hasError) {
       state = AsyncError(value.error!, StackTrace.current);
@@ -42,6 +43,6 @@ class ProfileControllerNotifier extends Notifier<AsyncValue<ProfileResponse>> {
   }
 }
 
-final profileControllerNotifierProvider =
-    NotifierProvider<ProfileControllerNotifier, AsyncValue<ProfileResponse>>(
-        ProfileControllerNotifier.new);
+final profileControllerNotifierProvider = NotifierProvider.autoDispose<
+    ProfileControllerNotifier,
+    AsyncValue<ProfileResponse>>(ProfileControllerNotifier.new);
