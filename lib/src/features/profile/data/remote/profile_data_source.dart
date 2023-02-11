@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 
 import 'package:kofu/src/network/dio_provider.dart';
 import 'package:kofu/src/constants/constant.dart';
+import 'package:retrofit/retrofit.dart';
 
 part 'profile_data_source.g.dart';
 
@@ -12,10 +13,12 @@ part 'profile_data_source.g.dart';
 abstract class ProfileDataSource {
   factory ProfileDataSource(Dio dio, {String baseUrl}) = _ProfileDataSource;
 
-  @GET("accounts")
-  Future<ProfileResponse> getProfile();
+  @GET("accounts/")
+  Future<ProfileResponse> getProfile(
+    @CancelRequest() CancelToken cancelToken,
+  );
 
-  @DELETE("authenticate")
+  @DELETE("authenticate/")
   Future<void> logout();
 }
 

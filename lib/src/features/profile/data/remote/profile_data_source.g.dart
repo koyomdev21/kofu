@@ -21,7 +21,7 @@ class _ProfileDataSource implements ProfileDataSource {
   String? baseUrl;
 
   @override
-  Future<ProfileResponse> getProfile() async {
+  Future<ProfileResponse> getProfile(cancelToken) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -34,9 +34,10 @@ class _ProfileDataSource implements ProfileDataSource {
     )
             .compose(
               _dio.options,
-              'accounts',
+              'accounts/',
               queryParameters: queryParameters,
               data: _data,
+              cancelToken: cancelToken,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ProfileResponse.fromJson(_result.data!);
@@ -56,7 +57,7 @@ class _ProfileDataSource implements ProfileDataSource {
     )
         .compose(
           _dio.options,
-          'authenticate',
+          'authenticate/',
           queryParameters: queryParameters,
           data: _data,
         )
