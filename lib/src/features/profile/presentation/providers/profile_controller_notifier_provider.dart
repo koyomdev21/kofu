@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kofu/src/features/profile/data/remote/remote_profile_repository.dart';
 import 'package:kofu/src/features/profile/domain/profile_response.dart';
@@ -8,15 +9,21 @@ class ProfileControllerNotifier
     extends AutoDisposeNotifier<AsyncValue<ProfileResponse>> {
   @override
   build() {
-    getProfile();
+    final cancelToken = CancelToken();
+    getProfile(cancelToken);
+    ref.onDispose(() {
+      print('cancelling request');
+      cancelToken.cancel();
+    });
     return state;
   }
 
-  void getProfile() async {
+  void getProfile(CancelToken cancelToken) async {
     final profileRepository = ref.read(profileRepositoryProvider);
     state = const AsyncLoading();
     await Future.delayed(const Duration(seconds: 1));
-    final value = await AsyncValue.guard(() => profileRepository.getProfile());
+    final value =
+        await AsyncValue.guard(() => profileRepository.getProfile(cancelToken));
     if (value.hasError) {
       state = AsyncError(value.error!, StackTrace.current);
     } else {
@@ -44,5 +51,6 @@ class ProfileControllerNotifier
 }
 
 final profileControllerNotifierProvider = NotifierProvider.autoDispose<
-    ProfileControllerNotifier,
-    AsyncValue<ProfileResponse>>(ProfileControllerNotifier.new);
+    ProfileControllerNotifier, AsyncValue<ProfileResponse>>(() {
+  return ProfileControllerNotifier();
+});
