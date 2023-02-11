@@ -10,6 +10,7 @@ class AppException with _$AppException {
   const factory AppException.invalidFormat() = InvalidFormat;
   const factory AppException.invalidPassword() = InvalidPassword;
   const factory AppException.invalidUsername() = InvalidUsername;
+  const factory AppException.sessionExpired() = SessionExpired;
   const factory AppException.noInternet() = NoInternet;
 }
 
@@ -44,6 +45,10 @@ extension AppExceptionDetails on AppException {
       invalidUsername: () => AppExceptionData(
         'invalid-username',
         'Invalid username',
+      ),
+      sessionExpired: () => AppExceptionData(
+        'session-expired',
+        'Session expired. Please relogin',
       ),
       noInternet: () => AppExceptionData(
         'no-internet',

@@ -23,6 +23,7 @@ mixin _$AppException {
     required TResult Function() invalidFormat,
     required TResult Function() invalidPassword,
     required TResult Function() invalidUsername,
+    required TResult Function() sessionExpired,
     required TResult Function() noInternet,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,6 +34,7 @@ mixin _$AppException {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ mixin _$AppException {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
     required TResult orElse(),
   }) =>
@@ -55,6 +58,7 @@ mixin _$AppException {
     required TResult Function(InvalidFormat value) invalidFormat,
     required TResult Function(InvalidPassword value) invalidPassword,
     required TResult Function(InvalidUsername value) invalidUsername,
+    required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(NoInternet value) noInternet,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +69,7 @@ mixin _$AppException {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
   }) =>
       throw _privateConstructorUsedError;
@@ -75,6 +80,7 @@ mixin _$AppException {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
     required TResult orElse(),
   }) =>
@@ -145,6 +151,7 @@ class _$UnknownErrorHasOccurred implements UnknownErrorHasOccurred {
     required TResult Function() invalidFormat,
     required TResult Function() invalidPassword,
     required TResult Function() invalidUsername,
+    required TResult Function() sessionExpired,
     required TResult Function() noInternet,
   }) {
     return unknownErrorHasOccurred();
@@ -158,6 +165,7 @@ class _$UnknownErrorHasOccurred implements UnknownErrorHasOccurred {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
   }) {
     return unknownErrorHasOccurred?.call();
@@ -171,6 +179,7 @@ class _$UnknownErrorHasOccurred implements UnknownErrorHasOccurred {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
     required TResult orElse(),
   }) {
@@ -189,6 +198,7 @@ class _$UnknownErrorHasOccurred implements UnknownErrorHasOccurred {
     required TResult Function(InvalidFormat value) invalidFormat,
     required TResult Function(InvalidPassword value) invalidPassword,
     required TResult Function(InvalidUsername value) invalidUsername,
+    required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(NoInternet value) noInternet,
   }) {
     return unknownErrorHasOccurred(this);
@@ -202,6 +212,7 @@ class _$UnknownErrorHasOccurred implements UnknownErrorHasOccurred {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
   }) {
     return unknownErrorHasOccurred?.call(this);
@@ -215,6 +226,7 @@ class _$UnknownErrorHasOccurred implements UnknownErrorHasOccurred {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
     required TResult orElse(),
   }) {
@@ -275,6 +287,7 @@ class _$DuplicateUsername implements DuplicateUsername {
     required TResult Function() invalidFormat,
     required TResult Function() invalidPassword,
     required TResult Function() invalidUsername,
+    required TResult Function() sessionExpired,
     required TResult Function() noInternet,
   }) {
     return duplicateUsername();
@@ -288,6 +301,7 @@ class _$DuplicateUsername implements DuplicateUsername {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
   }) {
     return duplicateUsername?.call();
@@ -301,6 +315,7 @@ class _$DuplicateUsername implements DuplicateUsername {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
     required TResult orElse(),
   }) {
@@ -319,6 +334,7 @@ class _$DuplicateUsername implements DuplicateUsername {
     required TResult Function(InvalidFormat value) invalidFormat,
     required TResult Function(InvalidPassword value) invalidPassword,
     required TResult Function(InvalidUsername value) invalidUsername,
+    required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(NoInternet value) noInternet,
   }) {
     return duplicateUsername(this);
@@ -332,6 +348,7 @@ class _$DuplicateUsername implements DuplicateUsername {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
   }) {
     return duplicateUsername?.call(this);
@@ -345,6 +362,7 @@ class _$DuplicateUsername implements DuplicateUsername {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
     required TResult orElse(),
   }) {
@@ -405,6 +423,7 @@ class _$InvalidFormat implements InvalidFormat {
     required TResult Function() invalidFormat,
     required TResult Function() invalidPassword,
     required TResult Function() invalidUsername,
+    required TResult Function() sessionExpired,
     required TResult Function() noInternet,
   }) {
     return invalidFormat();
@@ -418,6 +437,7 @@ class _$InvalidFormat implements InvalidFormat {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
   }) {
     return invalidFormat?.call();
@@ -431,6 +451,7 @@ class _$InvalidFormat implements InvalidFormat {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
     required TResult orElse(),
   }) {
@@ -449,6 +470,7 @@ class _$InvalidFormat implements InvalidFormat {
     required TResult Function(InvalidFormat value) invalidFormat,
     required TResult Function(InvalidPassword value) invalidPassword,
     required TResult Function(InvalidUsername value) invalidUsername,
+    required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(NoInternet value) noInternet,
   }) {
     return invalidFormat(this);
@@ -462,6 +484,7 @@ class _$InvalidFormat implements InvalidFormat {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
   }) {
     return invalidFormat?.call(this);
@@ -475,6 +498,7 @@ class _$InvalidFormat implements InvalidFormat {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
     required TResult orElse(),
   }) {
@@ -535,6 +559,7 @@ class _$InvalidPassword implements InvalidPassword {
     required TResult Function() invalidFormat,
     required TResult Function() invalidPassword,
     required TResult Function() invalidUsername,
+    required TResult Function() sessionExpired,
     required TResult Function() noInternet,
   }) {
     return invalidPassword();
@@ -548,6 +573,7 @@ class _$InvalidPassword implements InvalidPassword {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
   }) {
     return invalidPassword?.call();
@@ -561,6 +587,7 @@ class _$InvalidPassword implements InvalidPassword {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
     required TResult orElse(),
   }) {
@@ -579,6 +606,7 @@ class _$InvalidPassword implements InvalidPassword {
     required TResult Function(InvalidFormat value) invalidFormat,
     required TResult Function(InvalidPassword value) invalidPassword,
     required TResult Function(InvalidUsername value) invalidUsername,
+    required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(NoInternet value) noInternet,
   }) {
     return invalidPassword(this);
@@ -592,6 +620,7 @@ class _$InvalidPassword implements InvalidPassword {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
   }) {
     return invalidPassword?.call(this);
@@ -605,6 +634,7 @@ class _$InvalidPassword implements InvalidPassword {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
     required TResult orElse(),
   }) {
@@ -665,6 +695,7 @@ class _$InvalidUsername implements InvalidUsername {
     required TResult Function() invalidFormat,
     required TResult Function() invalidPassword,
     required TResult Function() invalidUsername,
+    required TResult Function() sessionExpired,
     required TResult Function() noInternet,
   }) {
     return invalidUsername();
@@ -678,6 +709,7 @@ class _$InvalidUsername implements InvalidUsername {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
   }) {
     return invalidUsername?.call();
@@ -691,6 +723,7 @@ class _$InvalidUsername implements InvalidUsername {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
     required TResult orElse(),
   }) {
@@ -709,6 +742,7 @@ class _$InvalidUsername implements InvalidUsername {
     required TResult Function(InvalidFormat value) invalidFormat,
     required TResult Function(InvalidPassword value) invalidPassword,
     required TResult Function(InvalidUsername value) invalidUsername,
+    required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(NoInternet value) noInternet,
   }) {
     return invalidUsername(this);
@@ -722,6 +756,7 @@ class _$InvalidUsername implements InvalidUsername {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
   }) {
     return invalidUsername?.call(this);
@@ -735,6 +770,7 @@ class _$InvalidUsername implements InvalidUsername {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
     required TResult orElse(),
   }) {
@@ -747,6 +783,142 @@ class _$InvalidUsername implements InvalidUsername {
 
 abstract class InvalidUsername implements AppException {
   const factory InvalidUsername() = _$InvalidUsername;
+}
+
+/// @nodoc
+abstract class _$$SessionExpiredCopyWith<$Res> {
+  factory _$$SessionExpiredCopyWith(
+          _$SessionExpired value, $Res Function(_$SessionExpired) then) =
+      __$$SessionExpiredCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SessionExpiredCopyWithImpl<$Res>
+    extends _$AppExceptionCopyWithImpl<$Res>
+    implements _$$SessionExpiredCopyWith<$Res> {
+  __$$SessionExpiredCopyWithImpl(
+      _$SessionExpired _value, $Res Function(_$SessionExpired) _then)
+      : super(_value, (v) => _then(v as _$SessionExpired));
+
+  @override
+  _$SessionExpired get _value => super._value as _$SessionExpired;
+}
+
+/// @nodoc
+
+class _$SessionExpired implements SessionExpired {
+  const _$SessionExpired();
+
+  @override
+  String toString() {
+    return 'AppException.sessionExpired()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SessionExpired);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unknownErrorHasOccurred,
+    required TResult Function() duplicateUsername,
+    required TResult Function() invalidFormat,
+    required TResult Function() invalidPassword,
+    required TResult Function() invalidUsername,
+    required TResult Function() sessionExpired,
+    required TResult Function() noInternet,
+  }) {
+    return sessionExpired();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unknownErrorHasOccurred,
+    TResult Function()? duplicateUsername,
+    TResult Function()? invalidFormat,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
+    TResult Function()? noInternet,
+  }) {
+    return sessionExpired?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unknownErrorHasOccurred,
+    TResult Function()? duplicateUsername,
+    TResult Function()? invalidFormat,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
+    TResult Function()? noInternet,
+    required TResult orElse(),
+  }) {
+    if (sessionExpired != null) {
+      return sessionExpired();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnknownErrorHasOccurred value)
+        unknownErrorHasOccurred,
+    required TResult Function(DuplicateUsername value) duplicateUsername,
+    required TResult Function(InvalidFormat value) invalidFormat,
+    required TResult Function(InvalidPassword value) invalidPassword,
+    required TResult Function(InvalidUsername value) invalidUsername,
+    required TResult Function(SessionExpired value) sessionExpired,
+    required TResult Function(NoInternet value) noInternet,
+  }) {
+    return sessionExpired(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnknownErrorHasOccurred value)? unknownErrorHasOccurred,
+    TResult Function(DuplicateUsername value)? duplicateUsername,
+    TResult Function(InvalidFormat value)? invalidFormat,
+    TResult Function(InvalidPassword value)? invalidPassword,
+    TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
+    TResult Function(NoInternet value)? noInternet,
+  }) {
+    return sessionExpired?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnknownErrorHasOccurred value)? unknownErrorHasOccurred,
+    TResult Function(DuplicateUsername value)? duplicateUsername,
+    TResult Function(InvalidFormat value)? invalidFormat,
+    TResult Function(InvalidPassword value)? invalidPassword,
+    TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
+    TResult Function(NoInternet value)? noInternet,
+    required TResult orElse(),
+  }) {
+    if (sessionExpired != null) {
+      return sessionExpired(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionExpired implements AppException {
+  const factory SessionExpired() = _$SessionExpired;
 }
 
 /// @nodoc
@@ -794,6 +966,7 @@ class _$NoInternet implements NoInternet {
     required TResult Function() invalidFormat,
     required TResult Function() invalidPassword,
     required TResult Function() invalidUsername,
+    required TResult Function() sessionExpired,
     required TResult Function() noInternet,
   }) {
     return noInternet();
@@ -807,6 +980,7 @@ class _$NoInternet implements NoInternet {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
   }) {
     return noInternet?.call();
@@ -820,6 +994,7 @@ class _$NoInternet implements NoInternet {
     TResult Function()? invalidFormat,
     TResult Function()? invalidPassword,
     TResult Function()? invalidUsername,
+    TResult Function()? sessionExpired,
     TResult Function()? noInternet,
     required TResult orElse(),
   }) {
@@ -838,6 +1013,7 @@ class _$NoInternet implements NoInternet {
     required TResult Function(InvalidFormat value) invalidFormat,
     required TResult Function(InvalidPassword value) invalidPassword,
     required TResult Function(InvalidUsername value) invalidUsername,
+    required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(NoInternet value) noInternet,
   }) {
     return noInternet(this);
@@ -851,6 +1027,7 @@ class _$NoInternet implements NoInternet {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
   }) {
     return noInternet?.call(this);
@@ -864,6 +1041,7 @@ class _$NoInternet implements NoInternet {
     TResult Function(InvalidFormat value)? invalidFormat,
     TResult Function(InvalidPassword value)? invalidPassword,
     TResult Function(InvalidUsername value)? invalidUsername,
+    TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(NoInternet value)? noInternet,
     required TResult orElse(),
   }) {
