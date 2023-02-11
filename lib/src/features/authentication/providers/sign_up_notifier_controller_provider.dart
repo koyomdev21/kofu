@@ -57,7 +57,6 @@ class SignUpNotifierControllerNotifier extends Notifier<AsyncValue<void>> {
       ref
           .read(secureStorageProvider)
           .setRefreshToken(value.value?.refreshToken ?? '');
-
       ref.read(appPreferencesProvider).setUserId(value.value?.item?.id ?? '');
       ref.read(appPreferencesProvider).setLoggedIn();
       ref.read(goRouterProvider).goNamed(AppRoute.profile.name);
