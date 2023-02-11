@@ -13,7 +13,7 @@ part 'auth_data_source.g.dart';
 abstract class AuthDataSource {
   factory AuthDataSource(Dio dio, {String baseUrl}) = _AuthDataSource;
 
-  @POST("accounts")
+  @POST("accounts/")
   Future<SignUpResponse> register(
     @Field('username') String username,
     @Field('email') String email,
@@ -21,7 +21,7 @@ abstract class AuthDataSource {
     @Field('password2') String password2,
   );
 
-  @POST("authenticate")
+  @POST("authenticate/")
   Future<SignInResponse> signIn(
     @Field('username') String username,
     @Field('password') String password,

@@ -44,7 +44,7 @@ class _AuthDataSource implements AuthDataSource {
     )
             .compose(
               _dio.options,
-              'accounts',
+              'accounts/',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -73,7 +73,7 @@ class _AuthDataSource implements AuthDataSource {
     )
             .compose(
               _dio.options,
-              'authenticate',
+              'authenticate/',
               queryParameters: queryParameters,
               data: _data,
             )
