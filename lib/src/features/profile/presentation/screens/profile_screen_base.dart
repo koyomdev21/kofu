@@ -67,7 +67,7 @@ class ProfileScreenBase extends ConsumerWidget {
                           ),
                           gapH8,
                           Text(
-                            '${profile.item?.name}',
+                            '${profile.item?.username}',
                             style: const TextStyle(
                               fontSize: 18,
                             ),
@@ -95,9 +95,9 @@ class ProfileScreenBase extends ConsumerWidget {
                             ),
                           ),
                           gapH8,
-                          const Text(
-                            'user',
-                            style: TextStyle(
+                          Text(
+                            '${profile.item?.email}',
+                            style: const TextStyle(
                               fontSize: 18,
                             ),
                           ),
@@ -124,9 +124,9 @@ class ProfileScreenBase extends ConsumerWidget {
                             ),
                           ),
                           gapH8,
-                          const Text(
-                            'user',
-                            style: TextStyle(
+                          Text(
+                            '${profile.item?.name}',
+                            style: const TextStyle(
                               fontSize: 18,
                             ),
                           ),
@@ -154,7 +154,7 @@ class ProfileScreenBase extends ConsumerWidget {
                           ),
                           gapH8,
                           const Text(
-                            'user',
+                            '98761234',
                             style: TextStyle(
                               fontSize: 18,
                             ),
@@ -183,7 +183,7 @@ class ProfileScreenBase extends ConsumerWidget {
                           ),
                           gapH8,
                           const Text(
-                            'user',
+                            'Address detail: lorem ipsum dolor sit amet consectetur adipicscing ',
                             style: TextStyle(
                               fontSize: 18,
                             ),
@@ -220,15 +220,15 @@ class ProfileScreenBase extends ConsumerWidget {
                       padding: const EdgeInsets.only(left: 20.0, right: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           gapH8,
                           Text(
-                            'HK\$2498.00',
-                            style: TextStyle(
+                            'HK\$ ${profile.item?.eWalletBalance}.00',
+                            style: const TextStyle(
                               fontSize: 18,
                             ),
                           ),
-                          Divider(
+                          const Divider(
                             color: Colors.white,
                           ),
                         ],
