@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kofu/src/common_widgets/alert_dialogs.dart';
@@ -18,6 +19,11 @@ extension AsyncValueUI on AsyncValue {
   String _errorMessage(Object? error) {
     if (error is AppException) {
       return error.details.message;
+    } else if (error is DioError) {
+      if (error.response?.statusCode == 401) {
+        return 'Session expired. Please relogin again';
+      }
+      return 'Session expired. Please relogin again';
     } else {
       return error.toString();
     }
