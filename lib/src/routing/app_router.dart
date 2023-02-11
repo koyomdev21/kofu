@@ -122,6 +122,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
               },
             ),
             GoRoute(
+              parentNavigatorKey: _shellNavigator,
               path: '/profile',
               name: AppRoute.profile.name,
               pageBuilder: (context, state) {
