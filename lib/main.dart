@@ -1,6 +1,8 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:kofu/src/features/authentication/data/local/local_auth_repository.dart';
 import 'package:kofu/src/features/authentication/data/local/sembast_auth_repository.dart';
+import 'package:kofu/src/network/dio_provider.dart';
 import 'package:kofu/src/utils/secure_storage_provider.dart';
 import 'package:stack_trace/stack_trace.dart' as stack_trace;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,11 +17,13 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
   final localAuthRepository = await SembastAuthRepository.makeDefault();
   const secureStorage = FlutterSecureStorage();
+  final dio = Dio();
   final container = ProviderContainer(
     overrides: [
       sharedPrefsProvider.overrideWithValue(prefs),
       localAuthRepositoryProvider.overrideWithValue(localAuthRepository),
       secureStorageInstanceProvider.overrideWithValue(secureStorage),
+      dioObjectProvider.overrideWithValue(dio),
     ],
   );
   FlutterError.demangleStackTrace = (StackTrace stack) {
