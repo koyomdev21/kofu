@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kofu/src/features/profile/domain/language_response.dart';
 import 'package:kofu/src/features/profile/domain/profile_response.dart';
-import 'package:retrofit/http.dart';
 import 'package:dio/dio.dart';
 
 import 'package:kofu/src/network/dio_provider.dart';
@@ -17,6 +17,18 @@ abstract class ProfileDataSource {
   Future<ProfileResponse> getProfile(
     @CancelRequest() CancelToken cancelToken,
   );
+
+  @PUT("accounts/")
+  Future<ProfileResponse> updateProfile(
+    @CancelRequest() CancelToken cancelToken,
+    @Field("username") String username,
+    @Field("email") String email,
+    @Field("name") String name,
+    @Field("allowPermission") List<String> allowPermission,
+  );
+
+  @GET("system/languages/")
+  Future<LanguageResponse1> getLanguage();
 
   @DELETE("authenticate/")
   Future<void> logout();

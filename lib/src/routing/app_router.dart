@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 
 import 'package:kofu/src/features/authentication/signin/presentation/screens/sign_in_screen_base.dart';
 import 'package:kofu/src/features/authentication/signup/presentation/screens/sign_up_screen_base.dart';
+import 'package:kofu/src/features/profile/domain/profile_response.dart';
+import 'package:kofu/src/features/profile/presentation/screens/change_language_screen.dart';
+import 'package:kofu/src/features/profile/presentation/screens/edit_profile_screen_base.dart';
 import 'package:kofu/src/features/profile/presentation/screens/profile_screen_base.dart';
 import 'package:kofu/src/features/dashboard/presentation/screens/dashboard_screen.dart';
 import 'package:kofu/src/features/search/presentation/screens/search_screen_base.dart';
@@ -22,6 +25,8 @@ enum AppRoute {
   signIn,
   signUp,
   search,
+  editProfile,
+  changeLanguage,
 }
 
 final GlobalKey<NavigatorState> _rootNavigator = GlobalKey(debugLabel: 'root');
@@ -76,11 +81,26 @@ final goRouterProvider = Provider<GoRouter>((ref) {
           )
         ],
       ),
-      // GoRoute(
-      //   path: '/profile',
-      //   name: AppRoute.profile.name,
-      //   builder: (context, state) => const ProfileScreenBase(),
-      // ),
+      GoRoute(
+        path: '/editProfile',
+        name: AppRoute.editProfile.name,
+        builder: (context, state) {
+          final profile = state.extra as ProfileResponse;
+          return EditProfileScreenBase(
+            profile: profile,
+            key: state.pageKey,
+          );
+        },
+      ),
+      GoRoute(
+        path: '/changeLanguage',
+        name: AppRoute.changeLanguage.name,
+        builder: (context, state) {
+          return ChangeLanguageScreen(
+            key: state.pageKey,
+          );
+        },
+      ),
       ShellRoute(
           navigatorKey: _shellNavigator,
           builder: (context, state, child) => DashboardScreen(
@@ -132,6 +152,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                   ),
                 );
               },
+              routes: const [],
             ),
           ]),
     ],

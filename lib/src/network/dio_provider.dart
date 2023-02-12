@@ -54,7 +54,8 @@ class AppDio with DioMixin implements Dio {
                 return handler.resolve(await _retry(error.requestOptions));
               } else {
                 const SnackBar snackBar = SnackBar(
-                    content: Text("Session expired. Please relogin again"));
+                  content: Text("Session expired. Please relogin again"),
+                );
                 snackbarKey.currentState?.showSnackBar(snackBar);
                 _storage.deleteAll();
                 ref.read(appPreferencesProvider).logout();

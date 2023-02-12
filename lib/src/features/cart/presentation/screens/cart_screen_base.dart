@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:kofu/src/constants/strings_manager.dart';
 
 class CartScreenBase extends StatelessWidget {
   const CartScreenBase({super.key});
@@ -8,7 +10,7 @@ class CartScreenBase extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Cart'),
+        title: const Text(AppStrings.cart).tr(),
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
         elevation: 0,

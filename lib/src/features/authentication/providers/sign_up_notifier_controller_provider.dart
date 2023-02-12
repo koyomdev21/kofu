@@ -71,29 +71,3 @@ final signUpControllerNotifierProvider =
 final showPasswordProvider = StateProvider.autoDispose<bool>((ref) {
   return true;
 });
-
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:kofu/src/features/authentication/data/auth_repository.dart';
-
-// class SignUpNotifier extends StateNotifier<AsyncValue<void>> {
-//   SignUpNotifier(
-//     this.ref,
-//   ) : super(const AsyncData<void>(null));
-//   final Ref ref;
-
-//   void register() async {
-//     state = const AsyncLoading();
-//     state = await AsyncValue.guard(
-//         () => (ref.read(authRepositoryProvider)).register(
-//               "rere",
-//               "rere",
-//               "rere",
-//               "rere",
-//             ));
-//   }
-// }
-
-// final signUpNotifierProvider =
-//     StateNotifierProvider<SignUpNotifier, AsyncValue<void>>((ref) {
-//   return SignUpNotifier(ref);
-// });

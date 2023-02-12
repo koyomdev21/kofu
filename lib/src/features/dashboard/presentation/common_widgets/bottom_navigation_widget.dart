@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import 'package:kofu/src/constants/strings_manager.dart';
 
 import 'package:kofu/src/features/dashboard/presentation/providers/dashboard_controller_provider.dart';
 import 'package:kofu/src/routing/app_router.dart';
@@ -50,28 +52,28 @@ class _BottomNavigationWidgetState
                 color: Theme.of(context).primaryColor,
               ),
               icon: Image.asset("assets/icons/navbar-home-off.png"),
-              label: 'HOME'),
+              label: AppStrings.home.tr()),
           BottomNavigationBarItem(
               activeIcon: Image.asset(
                 "assets/icons/navbar-cart-off.png",
                 color: Theme.of(context).primaryColor,
               ),
               icon: Image.asset("assets/icons/navbar-cart-off.png"),
-              label: 'CART'),
+              label: AppStrings.cart.tr()),
           BottomNavigationBarItem(
               activeIcon: Image.asset(
                 "assets/icons/navbar-order-off.png",
                 color: Theme.of(context).primaryColor,
               ),
               icon: Image.asset("assets/icons/navbar-order-off.png"),
-              label: 'ORDER'),
+              label: AppStrings.order.tr()),
           BottomNavigationBarItem(
               activeIcon: Image.asset(
                 "assets/icons/navbar-profile-off.png",
                 color: Theme.of(context).primaryColor,
               ),
               icon: Image.asset("assets/icons/navbar-profile-off.png"),
-              label: 'PROFILE'),
+              label: AppStrings.profile.tr()),
         ],
       ),
     );

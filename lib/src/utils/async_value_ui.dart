@@ -20,8 +20,8 @@ extension AsyncValueUI on AsyncValue {
     if (error is AppException) {
       return error.details.message;
     } else if (error is DioError) {
-      if (error.response?.statusCode == 401) {
-        return 'Session expired. Please relogin again';
+      if (error.type == DioErrorType.receiveTimeout) {
+        return 'Connection error. Please try again later';
       }
       return 'Session expired. Please relogin again';
     } else {

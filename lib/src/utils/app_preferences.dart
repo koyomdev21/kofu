@@ -71,6 +71,37 @@ class AppPreferences extends ChangeNotifier {
     await sharedPreferences.setStringList('permission', permission);
   }
 
+  Future<List<String>> getPermission() async {
+    return sharedPreferences.getStringList('permission') ?? [];
+  }
+
+  Future<String> getAppLanguage() async {
+    String? language = sharedPreferences.getString('language');
+
+    if (language != null && language.isNotEmpty) {
+      return language;
+    } else {
+      return 'en';
+    }
+  }
+
+  Future<void> setLanguageChanged(String? lang) async {
+    String currentLanguage = await getAppLanguage();
+
+    sharedPreferences.setString('language', lang!);
+  }
+
+  Future<Locale> getLocal() async {
+    String currentLanguage = await getAppLanguage();
+    if (currentLanguage == 'zh') {
+      // return chinese local
+      return const Locale("zh", "HK");
+    } else {
+      // return english local
+      return const Locale("en", "US");
+    }
+  }
+
   Future<void> logout() async {
     sharedPreferences.remove('logged_in');
     sharedPreferences.remove('user_id');

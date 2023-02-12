@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:kofu/src/constants/strings_manager.dart';
 
 class OrderScreenBase extends StatelessWidget {
   const OrderScreenBase({super.key});
@@ -8,7 +10,7 @@ class OrderScreenBase extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Order'),
+        title: const Text(AppStrings.order).tr(),
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
         elevation: 0,

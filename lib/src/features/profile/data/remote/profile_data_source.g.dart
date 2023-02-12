@@ -45,6 +45,64 @@ class _ProfileDataSource implements ProfileDataSource {
   }
 
   @override
+  Future<ProfileResponse> updateProfile(
+    cancelToken,
+    username,
+    email,
+    name,
+    allowPermission,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {
+      'username': username,
+      'email': email,
+      'name': name,
+      'allowPermission': allowPermission,
+    };
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ProfileResponse>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'accounts/',
+              queryParameters: queryParameters,
+              data: _data,
+              cancelToken: cancelToken,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ProfileResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<LanguageResponse1> getLanguage() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LanguageResponse1>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'system/languages/',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = LanguageResponse1.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<void> logout() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

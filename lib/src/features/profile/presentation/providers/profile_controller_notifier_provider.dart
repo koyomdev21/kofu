@@ -21,7 +21,7 @@ class ProfileControllerNotifier
   void getProfile(CancelToken cancelToken) async {
     final profileRepository = ref.read(profileRepositoryProvider);
     state = const AsyncLoading();
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(milliseconds: 500));
     final value =
         await AsyncValue.guard(() => profileRepository.getProfile(cancelToken));
     if (value.hasError) {
@@ -38,12 +38,14 @@ class ProfileControllerNotifier
     if (value.hasError) {
       state = AsyncError(value.error!, StackTrace.current);
     } else {
-      state = const AsyncData<ProfileResponse>(ProfileResponse(
-        item: null,
-        statusCode: null,
-        message: null,
-        success: null,
-      ));
+      state = const AsyncData<ProfileResponse>(
+        ProfileResponse(
+          item: null,
+          statusCode: null,
+          message: null,
+          success: null,
+        ),
+      );
       ref.read(appPreferencesProvider).logout();
       ref.read(secureStorageProvider).deleteAll();
     }
